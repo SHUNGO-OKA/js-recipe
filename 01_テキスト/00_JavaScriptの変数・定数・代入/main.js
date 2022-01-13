@@ -14,7 +14,7 @@ let hensu2 = 42
 const teisu = 42
 
 // 定数には値を再代入できない
-teisu = 100 // エラー
+// teisu = 100 // エラー
 
 // * 変数や定数の名前はだいたい自由に決められるが、-（ハイフン）が使えなかったり、最初の文字に数字が使えなかったりする
 let namae
@@ -24,3 +24,8 @@ let namae
 // 複数の単語を組み合わせるときは、ふたつめ以降の単語の最初の文字を大文字にしてくっつけることが多い
 // このような書き方をキャメルケースという（大文字がキャメル＝ラクダのこぶにみえることから）
 let camelCase // camel + case
+
+const Event = document.getElementById("nice-button");
+Event.onclick = function() {
+    console.log("こんにちは");
+}
