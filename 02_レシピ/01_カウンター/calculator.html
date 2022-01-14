@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1 id="text">ここに式と結果出るよ</h1>
+<table>
+    
+    <!-- trはTable rowって意味 -->
+    <!-- tdはtable dataの略でテーブルセルって意味 -->
+    <!-- <tr>
+        <td colspan="4">
+        colspanは横方向にデータを結合 
+        rowspanは縦方向にデータを結合 
+            <input type="text" value="" disabled class="display" name="display" >
+        </td>
+    </tr> -->
+    <tr>
+        <td><input type="button" value="÷" onclick="get_value(this)" name="split_btn"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="7" onclick="get_value(this)"></td>
+        <td><input type="button" value="8" onclick="get_value(this)"></td>
+        <td><input type="button" value="9" onclick="get_value(this)"></td>
+        <td><input type="button" value="×" onclick="get_value(this)" name="multi_btn"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="4" onclick="get_value(this)"></td>
+        <td><input type="button" value="5" onclick="get_value(this)"></td>
+        <td><input type="button" value="6" onclick="get_value(this)"></td>
+        <td><input type="button" value="-" onclick="get_value(this)"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="1" onclick="get_value(this)"></td>
+        <td><input type="button" value="2" onclick="get_value(this)"></td>
+        <td><input type="button" value="3" onclick="get_value(this)"></td>
+        <td><input type="button" value="+" onclick="get_value(this)"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="0" onclick="get_value(this)"></td>
+        <td><input type="button" value="." onclick="get_value(this)"></td>
+        <td><input type="button" value="C" onclick="get_value(this)"></td>
+        <td><input type="button" value="=" onclick="get_value(this)"></td>
+    </tr>
+
+</table>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
