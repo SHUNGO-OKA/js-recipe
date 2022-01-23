@@ -1,6 +1,7 @@
 const inputElement = document.getElementById("input-todo")
 const container = document.getElementById("cards-container")
 const addButton = document.getElementById("add-button")
+// htmlではidを被らせちゃいけない3パターン分書いてあげる
 
 inputElement.addEventListener("keypress", enter)
 function enter(e) {
