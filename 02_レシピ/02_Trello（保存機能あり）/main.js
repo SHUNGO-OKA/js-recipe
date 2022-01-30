@@ -1,5 +1,7 @@
 const inputElement = document.getElementById("input-todo")
-const container = document.getElementById("cards-container")
+const container1 = document.getElementById("cards1-container")
+// const container2 = document.getElementById("cards1-container")
+// const container3 = document.getElementById("cards1-container")
 const addButton = document.getElementById("add-button")
 // htmlではidを被らせちゃいけない3パターン分書いてあげる
 
@@ -23,14 +25,14 @@ function enter(e) {
     deleteButton.onclick = function() {
       card.remove()
     }
-    container.append(card)
+    container1.append(card)
     inputElement.value = ""
   }
 }
 
 addButton.onclick = function() {
   const card = createdCard(inputElement.value)
-  container.append(card)
+  container1.append(card)
   inputElement.value = ""
 }
 
