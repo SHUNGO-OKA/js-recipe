@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <input type="number" v-model="nyuryokugaku" />
+      <div>
+        入力額: {{ nyuryokugaku }}
+      </div>
+      <div>
+        <button v-on:click="nyukin">入金</button>
+        <button v-on:click="shukkin">出金</button>
+      </div>
+      <h1>口座残高</h1>
+      <div>
+        残高: {{ zandaka }}円
+      </div>
+      <h1>
+        取引記録
+      </h1>
+      <div>
+        日付: {{ date }}
+      </div>
+      <div>
+        操作: {{ operation }}
+      </div>
+      <div>
+        金額: {{ transaction_amount }}
+      </div>
+      <div>
+        日付: {{ date }}
+      </div>
+      <div>
+        操作: {{ operation }}
+      </div>
+      <div>
+        金額: {{ transaction_amount }}
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            nyuryokugaku: "",
+            zandaka: 0,
+            date: "",
+            operation: "",
+            transaction_amount: 0,
+          }
+        },
+        methods: {
+          nyukin: function() {
+            this.zandaka += Number(this.nyuryokugaku)
+            const now = new Date()
+            this.date = now
+            this.operation = "入金"
+            this.transaction_amount = Number(this.nyuryokugaku)
+            console.log(this.transaction_amount)
+            this.nyuryokugaku = ""
+          },
+          shukkin: function() {
+            this.zandaka -= Number(this.nyuryokugaku)
+            this.operation = "出金"
+            this.transaction_amount = Number(this.nyuryokugaku)
+            console.log(this.transaction_amount)
+            this.nyuryokugaku = ""
+          },
+        },
+      }).mount("#app")
+    </script>
+  </body>
+</html>
