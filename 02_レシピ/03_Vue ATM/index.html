@@ -23,23 +23,11 @@
       <h1>
         取引記録
       </h1>
-      <div>
-        日付: {{ date }}
+      <div v-for:="transaction in transactions">
+        日付:{{ transaction.date }} <br> 
+        操作:{{ transaction.operation }} <br> 
+        金額:{{ transaction.amount }}
       </div>
-      <div>
-        操作: {{ operation }}
-      </div>
-      <div>
-        金額: {{ transaction_amount }}
-      </div>
-      <div>
-        日付: {{ date }}
-      </div>
-      <div>
-        操作: {{ operation }}
-      </div>
-      <div>
-        金額: {{ transaction_amount }}
       </div>
     </div>
     <script src="https://unpkg.com/vue@next"></script>
@@ -49,26 +37,24 @@
           return {
             nyuryokugaku: "",
             zandaka: 0,
-            date: "",
-            operation: "",
-            transaction_amount: 0,
+            transactions:[]
           }
         },
         methods: {
           nyukin: function() {
             this.zandaka += Number(this.nyuryokugaku)
             const now = new Date()
-            this.date = now
-            this.operation = "入金"
-            this.transaction_amount = Number(this.nyuryokugaku)
-            console.log(this.transaction_amount)
+            const transaction_Information = {date: now, operation: "入金", amount: String(this.nyuryokugaku)}
+            this.transactions.push(transaction_Information)
+            console.log(this.transaction)
             this.nyuryokugaku = ""
           },
           shukkin: function() {
             this.zandaka -= Number(this.nyuryokugaku)
-            this.operation = "出金"
-            this.transaction_amount = Number(this.nyuryokugaku)
-            console.log(this.transaction_amount)
+            const now = new Date()
+            const transaction_Information = {date: now, operation: "出金", amount: String(this.nyuryokugaku)}
+            this.transactions.push(transaction_Information)
+            console.log(this.transaction)
             this.nyuryokugaku = ""
           },
         },

@@ -1,15 +1,51 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vueの基礎</title>
-</head>
-<body>
-  <h1>Vueの基礎</h1>
-  <!-- ↓ここに追加する -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vueの基礎</title>
+  </head>
+  <body>
+    <h1>Vueの基礎</h1>
+    <!-- ↓ここに追加する -->
+    <div id="app">
+      <div>{{ count }}</div>
+      <button v-on:click="countUp">＋１</button>
+    </div>
+    <section id="v-if">
+      <h3>v-if</h3>
+      <button v-on:click="hyouji">表示する</button>
+      <div v-if="seen">みつかった！</div>
+    </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-  <script src="main.js"></script>
-</body>
+    <section id="v-if-sign-in">
+      <h3>v-if でサインイン</h3>
+      <!-- この要素は user が null でないときに表示される -->
+      <div v-if="user !== null">
+        <button v-on:click="signOut">サインアウト</button>
+        <div>
+          {{ user.name }}さん、こんにちは！
+        </div>
+      </div>
+      <!-- この要素はそれ以外の場合に表示される -->
+      <div v-else>
+        <button v-on:click="signIn">サインイン</button>
+        <div>
+          サインインしてください。
+        </div>
+      </div>
+    </section>
+    <section id="v-for">
+      <h3>v-for</h3>
+      <div v-for="animal in animals">{{ animal }}</div>
+    </section>
+    <section id="v-for-push">
+      <h3>v-for（配列に追加）</h3>
+      <button v-on:click="addAnimal">追加</button>
+      <div v-for="animal in animals">{{ animal }}</div>
+    </section>
+
+    <script src="https://unpkg.com/vue@3.2.20"></script>
+    <script src="main.js"></script>
+  </body>
 </html>
